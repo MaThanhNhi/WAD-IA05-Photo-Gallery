@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 
 export function Header() {
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === "/photos";
 
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-sm">
@@ -10,7 +10,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           {" "}
           <Link
-            to="/"
+            to="/photos"
             className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg"
           >
             <div className="w-10 h-10 bg-linear-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center transform group-hover:scale-105 transition-transform">

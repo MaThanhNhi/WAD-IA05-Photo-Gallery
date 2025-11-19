@@ -15,7 +15,7 @@ export function PhotoCard({ photo }: PhotoCardProps) {
 
   return (
     <Link
-      to={`/photo/${photo.id}`}
+      to={`/photos/${photo.id}`}
       className="group block bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
       aria-label={`View photo by ${photo.author}`}
     >

@@ -3,7 +3,7 @@
  * Sets up routing and global layout
  */
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Header } from "./components/Header";
 import { HomePage } from "./pages/HomePage";
 import { PhotoDetailPage } from "./pages/PhotoDetailPage";
@@ -16,8 +16,9 @@ function App() {
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/photo/:id" element={<PhotoDetailPage />} />
+            <Route path="/" element={<Navigate to="/photos" replace />} />
+            <Route path="/photos" element={<HomePage />} />
+            <Route path="/photos/:id" element={<PhotoDetailPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

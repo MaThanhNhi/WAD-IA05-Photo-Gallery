@@ -32,20 +32,12 @@ export async function fetchPhotos(
  * @returns Promise with photo details
  */
 export async function fetchPhotoById(id: string): Promise<Photo> {
-  const response = await fetch(`${BASE_URL}/list?page=1&limit=100`);
-
+  const response = await fetch(`https://picsum.photos/id/${id}/info`);
   if (!response.ok) {
-    throw new Error(`Failed to fetch photo: ${response.statusText}`);
-  }
-
-  const photos: Photo[] = await response.json();
-  const photo = photos.find((p) => p.id === id);
-
-  if (!photo) {
     throw new Error("Photo not found");
   }
 
-  return photo;
+  return response.json();
 }
 
 /**
@@ -56,6 +48,5 @@ export async function fetchPhotoById(id: string): Promise<Photo> {
  * @returns Thumbnail URL
  */
 export function getThumbnailUrl(id: string, width: number = 400, height: number = 300): string {
-  // Lorem Picsum supports dynamic image sizing
   return `https://picsum.photos/id/${id}/${width}/${height}`;
 }
