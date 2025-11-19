@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Header } from "./components/Header";
 import { HomePage } from "./pages/HomePage";
 import { PhotoDetailPage } from "./pages/PhotoDetailPage";
@@ -6,7 +6,7 @@ import { NotFoundPage } from "./pages/NotFoundPage";
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <Header />
         <main>
@@ -18,7 +18,7 @@ function App() {
           </Routes>
         </main>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
