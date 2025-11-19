@@ -1,8 +1,3 @@
-/**
- * Main App component
- * Sets up routing and global layout
- */
-
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Header } from "./components/Header";
 import { HomePage } from "./pages/HomePage";

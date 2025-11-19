@@ -56,6 +56,5 @@ export function useInfiniteScroll({
     };
   }, [handleObserver, threshold]);
 
-  // Expose the sentinel ref for components to use
   return { sentinelRef };
 }

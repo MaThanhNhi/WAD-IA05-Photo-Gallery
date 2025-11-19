@@ -1,7 +1,3 @@
-/**
- * API utilities for fetching photos from Lorem Picsum
- */
-
 import type { Photo } from "../types/Photo";
 
 const BASE_URL = "https://picsum.photos/v2";
@@ -42,7 +38,7 @@ export async function fetchPhotoById(id: string): Promise<Photo> {
 
 /**
  * Get thumbnail URL for a photo
- * @param downloadUrl - The original download URL
+ * @param id - The photo ID
  * @param width - Thumbnail width
  * @param height - Thumbnail height
  * @returns Thumbnail URL

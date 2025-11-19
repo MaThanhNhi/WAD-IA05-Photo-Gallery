@@ -37,7 +37,6 @@ export function HomePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Page Header */}
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Explore Photos</h2>
         <p className="text-gray-600 dark:text-gray-400">
@@ -45,31 +44,26 @@ export function HomePage() {
         </p>
       </div>
 
-      {/* Photo Grid */}
       <PhotoGrid photos={photos} />
 
-      {/* Loading indicator for infinite scroll */}
       {isLoading && (
         <div className="mt-8">
           <LoadingSpinner text="Loading more photos..." />
         </div>
       )}
 
-      {/* End of list message */}
       {!hasMore && photos.length > 0 && (
         <div className="text-center py-8">
           <p className="text-gray-500 dark:text-gray-400">You've reached the end of the gallery</p>
         </div>
       )}
 
-      {/* Error message for failed pagination */}
       {error && photos.length > 0 && (
         <div className="mt-8">
           <ErrorMessage title="Failed to Load More" message={error.message} onRetry={loadMore} />
         </div>
       )}
 
-      {/* Sentinel element for intersection observer */}
       <div ref={sentinelRef} className="h-4" aria-hidden="true" />
     </div>
   );
