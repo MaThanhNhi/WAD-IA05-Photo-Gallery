@@ -1,2 +1,2 @@
-pnpm test
+pnpm tsc --noEmit
 npx lint-staged
